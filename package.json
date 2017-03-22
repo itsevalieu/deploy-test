@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bcryptjs": "^2.4.3",
     "babel-cli": "6.14.0",
     "babel-core": "6.14.0",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.1",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
@@ -16,16 +16,18 @@
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
     "passport-github": "^1.1.0",
+    "passport-github2": "^0.1.10",
     "passport-local": "^1.0.0",
     "passport-twitter": "^1.0.4",
-    "socket.io": "^1.7.3"
-  },
-  "devDependencies": {
-    "concurrently": "^3.4.0",
+    "socket.io": "^1.7.3",
     "react-scripts": "0.9.5"
   },
+  "devDependencies": {
+    "concurrently": "^3.4.0"
+  },
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "node server.js",
+    "install": "cd client && npm install && npm run build && cd ..",
     "server": "babel-node server.js",
     "client": "babel-node start-client.js"
   }

@@ -131,7 +131,7 @@ app.use("/tech", techRoutes);
 app.use("/user", userRoutes);
 
 // app.use("/", controllers);
-app.use(express.static(path.join(__dirname, 'static')));
+app.use(express.static(path.join(__dirname, 'client/build')));
 app.get("*", express.static(path.join(__dirname, './public/index.html')));
 
 // Listener
