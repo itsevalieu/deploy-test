@@ -34,6 +34,11 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(cookieParser());
 
+// Express only serves static assets in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+}
+
 // Static Directory
 // -------------------------------------------------
 app.use(express.static(path.join(__dirname,"public")));
